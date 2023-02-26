@@ -2,6 +2,7 @@ package com.stefanini.service;
 
 import com.stefanini.dto.jogador.JogadorCriacaoDTO;
 import com.stefanini.dto.jogador.JogadorRetornoDTO;
+import com.stefanini.dto.stefamon.StefamonDTO;
 import com.stefanini.entity.Jogador;
 import com.stefanini.entity.Stefamon;
 import com.stefanini.exceptions.jogador.JogadorNaoEncontradoException;
@@ -74,8 +75,7 @@ public class JogadorService {
     public void comprarStefamons(List<Stefamon> stefamons, Jogador jogador){
         BigDecimal valorTotal = stefamons.stream()
                 .map(s -> stefamonService.buscarPorId(s.getId()))
-                .map(StefamonParser::DtoToEntity)
-                .map(s -> stefamonService.calcularPrecoStefamon(s))
+                .map(StefamonDTO::getPreco)
                 .reduce(BigDecimal.ZERO , BigDecimal::add);
 
         boolean possuiSaldoParaCompra = jogador.getSaldo().compareTo(valorTotal) >= 0;

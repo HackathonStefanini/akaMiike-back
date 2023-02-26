@@ -1,5 +1,7 @@
 package com.stefanini.dto.stefamon;
 
+import com.stefanini.entity.Stefamon;
+
 import java.math.BigDecimal;
 
 public class StefamonDTO {
@@ -104,10 +106,7 @@ public class StefamonDTO {
     }
 
     public BigDecimal getPreco() {
-        return preco;
+        return BigDecimal.valueOf((vida + ataque + defesa + inteligencia + velocidade + poder) / 6.0);
     }
 
-    public void setPreco(BigDecimal preco) {
-        this.preco = preco;
-    }
 }

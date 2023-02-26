@@ -34,9 +34,4 @@ public class StefamonService {
         return StefamonParser.EntityToDto(stefamon);
     }
 
-    public BigDecimal calcularPrecoStefamon(Stefamon stefamon){
-        return BigDecimal.valueOf((stefamon.getVida() + stefamon.getAtaque() + stefamon.getDefesa()
-                + stefamon.getInteligencia() + stefamon.getVelocidade() + stefamon.getPoder()) / 6.0);
-    }
-
  }
