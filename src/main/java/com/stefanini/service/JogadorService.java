@@ -73,6 +73,8 @@ public class JogadorService {
 
     public void comprarStefamons(List<Stefamon> stefamons, Jogador jogador){
         BigDecimal valorTotal = stefamons.stream()
+                .map(s -> stefamonService.buscarPorId(s.getId()))
+                .map(StefamonParser::DtoToEntity)
                 .map(s -> stefamonService.calcularPrecoStefamon(s))
                 .reduce(BigDecimal.ZERO , BigDecimal::add);
 
