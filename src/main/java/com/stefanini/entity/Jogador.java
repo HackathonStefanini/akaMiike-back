@@ -26,15 +26,14 @@ public class Jogador {
 
     @ManyToMany
     @JoinTable(name = "Jogador_Stefamon",
-            joinColumns = {@JoinColumn(name = "IdJogador")},
-            inverseJoinColumns = {@JoinColumn(name = "IdStefamon")})
+            joinColumns = {@JoinColumn(name = "id_jogador")},
+            inverseJoinColumns = {@JoinColumn(name = "id")})
     private List<Stefamon> stefamons = new ArrayList<>();
 
     public Jogador() {
     }
 
     public Jogador(String nickname, String password, BigDecimal saldo, List<Stefamon> stefamons) {
-        this.id = id;
         this.nickname = nickname;
         this.password = password;
         this.saldo = saldo;
