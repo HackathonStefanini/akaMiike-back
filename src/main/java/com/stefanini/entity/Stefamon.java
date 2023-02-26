@@ -39,7 +39,8 @@ public class Stefamon {
 
     public Stefamon(){}
 
-    public Stefamon( String nome, Integer vida, Integer ataque, Integer defesa, Integer inteligencia, Integer poder, Integer velocidade, String urlFoto) {
+    public Stefamon(Long id, String nome, Integer vida, Integer ataque, Integer defesa, Integer inteligencia, Integer poder, Integer velocidade, String urlFoto) {
+        this.id = id;
         this.nome = nome;
         this.vida = vida;
         this.ataque = ataque;
